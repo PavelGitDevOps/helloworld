@@ -11,9 +11,9 @@ pipeline {
         echo 'test'
       }
     }
-    stage('') {
+    stage('email') {
       steps {
-        emailext(subject: 'test', body: 'test', attachLog: true, replyTo: 'khalimovpavlo@gmail.com', to: 'khalimovpavlo@gmail.com')
+        emailext(subject: 'test', body: 'test', attachLog: true, replyTo: 'khalimovpavlo@gmail.com', to: 'khalimovpavlo@gmail.com', mimeType: '1', attachmentsPattern: '1')
       }
     }
   }
