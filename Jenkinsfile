@@ -8,7 +8,20 @@ pipeline {
     }
     stage('test') {
       steps {
-        echo 'test'
+        parallel(
+          "test": {
+            echo 'test'
+            
+          },
+          "test1": {
+            echo 'test'
+            
+          },
+          "test2": {
+            build(job: 'Deploy', quietPeriod: 1)
+            
+          }
+        )
       }
     }
     stage('email') {
