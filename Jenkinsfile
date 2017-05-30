@@ -16,10 +16,6 @@ pipeline {
           "test1": {
             echo 'test'
             
-          },
-          "test2": {
-            build(job: 'Deploy', quietPeriod: 1)
-            
           }
         )
       }
